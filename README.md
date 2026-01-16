@@ -79,16 +79,17 @@ else:
 
 ## 動作環境
 
--
-
 ## 検証
 
-- AtCoder: ABC 375 F
-  - 問題: <https://atcoder.jp/contests/abc375/tasks/abc375_f>
-  - 解説: <https://atcoder.jp/contests/abc375/editorial/11134>
-  - 結果: <https://atcoder.jp/contests/abc375/submissions/72474556>
-- pytest による簡易テスト（例外条件、負閉路検出）
-  - <test/test_floyd_warshall.py>
+### AtCoder: ABC 375 F
+
+- 問題: <https://atcoder.jp/contests/abc375/tasks/abc375_f>
+- 解説: <https://atcoder.jp/contests/abc375/editorial/11134>
+- 結果: <https://atcoder.jp/contests/abc375/submissions/72474556>
+
+### pytest による簡易テスト（例外条件、負閉路検出）
+
+[テストコード](test/test_floyd_warshall.py)
 
 ## ライセンス
 
