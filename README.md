@@ -2,7 +2,7 @@
 
 All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxation API, designed for competitive programming.
 
-競プロ用途の Floyd–Warshall 実装です。
+競プロ用途のフロイド・ワーシャル実装です。
 `add_edge()` で辺を設定した後、`solve()` で全点対最短距離を計算します。
 `solve()` 後に辺の追加を行う場合、必要に応じて `solve()` より軽い計算量で距離行列を更新できます。
 
@@ -77,12 +77,18 @@ else:
 `has_negative_cycle()` が True の場合、最短距離は一般に定義できません。
 その場合 `dist` を最短距離として解釈しないでください。
 
+## 動作環境
+
+-
+
 ## 検証
 
-AtCoder のテストケースで検証しました。
-
-- <https://atcoder.jp/contests/abc375/tasks/abc375_f>
-- <https://atcoder.jp/contests/abc375/editorial/11134>
+- AtCoder: ABC 375 F
+  - 問題: <https://atcoder.jp/contests/abc375/tasks/abc375_f>
+  - 解説: <https://atcoder.jp/contests/abc375/editorial/11134>
+  - 結果: <https://atcoder.jp/contests/abc375/submissions/72474556>
+- pytest による簡易テスト（例外条件、負閉路検出）
+  - <test/test_floyd_warshall.py>
 
 ## ライセンス
 
