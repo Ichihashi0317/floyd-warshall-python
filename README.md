@@ -86,7 +86,7 @@ else:
   - 検証方法: AtCoder ABC375F
   - 問題: <https://atcoder.jp/contests/abc375/tasks/abc375_f>
   - 解説: <https://atcoder.jp/contests/abc375/editorial/11134>
-  - 提出コード: [example.py](example.example.py)
+  - 提出コード: [example.py](example/example.py)
 
 - 他機能の検証（例外条件、負閉路検出）
 
