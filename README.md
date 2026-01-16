@@ -81,15 +81,17 @@ else:
 
 ## 検証
 
-### AtCoder: ABC 375 F
+- 主機能の検証
 
-- 問題: <https://atcoder.jp/contests/abc375/tasks/abc375_f>
-- 解説: <https://atcoder.jp/contests/abc375/editorial/11134>
-- 結果: <https://atcoder.jp/contests/abc375/submissions/72474556>
+  - 検証方法: AtCoder ABC375F
+  - 問題: <https://atcoder.jp/contests/abc375/tasks/abc375_f>
+  - 解説: <https://atcoder.jp/contests/abc375/editorial/11134>
+  - 提出コード: [example.py](example.example.py)
 
-### pytest による簡易テスト（例外条件、負閉路検出）
+- 他機能の検証（例外条件、負閉路検出）
 
-[テストコード](test/test_floyd_warshall.py)
+  - 検証方法: pytest
+  - 検証コード: [test_floyd_warshall.py](test/test_floyd_warshall.py)
 
 ## ライセンス
 
