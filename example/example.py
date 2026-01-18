@@ -145,7 +145,6 @@ class FloydWarshall:
                         dist[i][j] = d
 
         self._needs_solve = False
-
         return self._dist
 
     def has_negative_cycle(self) -> bool:
@@ -215,3 +214,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
