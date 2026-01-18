@@ -163,4 +163,3 @@ class FloydWarshall:
         if self._needs_solve:
             raise RuntimeError("Call solve() before calling has_negative_cycle()")
         return any(self._dist[v][v] < 0 for v in range(self._n))
-
