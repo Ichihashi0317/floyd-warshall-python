@@ -145,7 +145,6 @@ class FloydWarshall:
                         dist[i][j] = d
 
         self._needs_solve = False
-
         return self._dist
 
     def has_negative_cycle(self) -> bool:
@@ -164,3 +163,4 @@ class FloydWarshall:
         if self._needs_solve:
             raise RuntimeError("Call solve() before calling has_negative_cycle()")
         return any(self._dist[v][v] < 0 for v in range(self._n))
+
