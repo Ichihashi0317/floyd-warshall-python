@@ -16,13 +16,13 @@ All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxat
 - 負閉路検出
 - 辺の追加に伴う距離行列の更新を `O(n^2)` で実行可能
 
-### 注意点
+#### 注意点
 
 - 本実装は緩和（距離を短縮するような辺追加 / 重み減少）のみを反映します。重み増加や辺削除はサポートしません。
 
 ## メソッド / プロパティ
 
-### メソッド / プロパティ 一覧
+### 一覧
 
 | メソッド / プロパティ | 機能 | 計算量 | 使用条件 | 状態変化 |
 | - | - | - | - | - |
@@ -30,8 +30,8 @@ All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxat
 | `add_edge(...,`<br>`update_dists=False)` | 辺の追加 | `O(1)` | - | 距離行列を**非整合化** |
 | `add_edge(...,`<br>`update_dists=True)` | 辺の追加<br>距離行列更新 | `O(n^2)` | 距離行列が**整合** | (距離行列は**整合**維持) |
 | `solve()` | 距離行列更新<br>距離行列取得 | `O(n^3)` | - | 距離行列を**整合化** |
-| `has_negative_cycle()` | 負閉路検出 | `O(n)` | 距離行列が**整合** | - |
 | `dist` | 距離行列取得<br>(プロパティ) | `O(1)` | 距離行列が**整合** | - |
+| `has_negative_cycle()` | 負閉路検出 | `O(n)` | 距離行列が**整合** | - |
 
 - 空間計算量: `O(n^2)`（距離行列）
 
@@ -49,7 +49,7 @@ All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxat
   - `dist` の参照
   - `add_edge(..., update_dists=True)` の呼び出し
   - `has_negative_cycle()` の呼び出し
-- `solve()` を呼ぶことで距離行列は整合されます。
+- `solve()` を呼ぶことで距離行列は整合します。
 
 ## 使い方
 
