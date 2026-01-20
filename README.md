@@ -14,20 +14,33 @@ All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxat
 - `has_negative_cycle()` で負閉路検出
 - `add_edge(..., update_dists=True)` による距離行列の更新
 
-## 注意点
+### 注意点
 
 - 本実装は緩和（距離を短縮するような辺追加 / 重み減少）のみを反映します。重み増加や辺削除はサポートしません。
-- `dist` の参照、および `add_edge(..., update_dists=True)` / `has_negative_cycle()` の呼び出しは、距離行列が有効な状態（`solve()` 後、または辺が存在しない初期状態）でのみ可能です。
-  `add_edge(..., update_dists=False)` を呼んだ後は距離行列が有効な状態でないため、再び `solve()` を呼ぶまでこれらの操作はできません。
 
-## 計算量
+<!-- ## 計算量
 
-ここで `n` は頂点数（引数 `num_v`）です。
+ここで `n` は頂点数です。
 
 - Memory: `O(n^2)`（距離行列）
 - `solve()`: `O(n^3)` time
 - `add_edge(..., update_dists=True)`: `O(n^2)` time
-- `add_edge(..., update_dists=False)`: `O(1)` time
+- `add_edge(..., update_dists=False)`: `O(1)` time -->
+
+## メソッド / プロパティ 一覧
+
+| メソッド / プロパティ | 機能 | 計算量 | 使用条件 | 状態変化 |
+| - | - | - | - | - |
+| `__init__(...)` | 初期化 | `O(n^2)` | - | 距離行列を**整合化** |
+| `add_edge(...,`<br>`update_dists=False)` | 辺の追加 | `O(1)` | - | 距離行列を**非整合化** |
+| `add_edge(...,`<br>`update_dists=True)` | 辺の追加<br>距離行列更新 | `O(n^2)` | 距離行列が**整合** | - |
+| `solve()` | 距離行列更新<br>距離行列取得 | `O(n^3)` | - | 距離行列を**整合化** |
+| `dist` | 距離行列取得 | `O(1)` | 距離行列が**整合** | - |
+| `has_negative_cycle()` | 負閉路検出 | `O(n)` | 距離行列が**整合** | - |
+
+- `n` は頂点数
+- 空間計算量: `O(n^2)`（距離行列）
+- `dist` の参照、および `add_edge(..., update_dists=True)` / `has_negative_cycle()` の呼び出しは、内部の距離行列が整合している状態（`solve()` 後、または辺が存在しない初期状態）でのみ可能です。`add_edge(..., update_dists=False)` により緩和された後は距離行列の整合性が崩れるため、次に `solve()` を呼ぶまでこれらの操作はできません。
 
 ## 使い方
 
@@ -35,20 +48,20 @@ All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxat
 
 ```python
 fw = FloydWarshall(n, inf=10**18)
-fw.add_edge(0, 1, 5)
-fw.add_edge(1, 2, -2)
+fw.add_edge(0, 1, 5)  # add an edge 0 -> 1 with weight 5
+fw.add_edge(1, 2, -2)  # add an edge 1 -> 2 with weight -2
 
 dist = fw.solve()
 print(dist[0][2])  # shortest distance 0 -> 2
 ```
 
-infのデフォルト値は`float("inf")`であり、未指定でも問題ありません。
-有限値を指定する場合は、最大の最短距離より十分大きい値を指定してください。
+- infのデフォルト値は `float("inf")` であり、未指定でも問題ありません。有限値を指定する場合は、最大の最短距離より十分大きい値を指定してください。
+- `solve()` は、距離行列の更新が不要な場合（整合している場合）は処理をスキップします。
 
 ### solve 後の辺追加と距離更新
 
-一度 `solve()` していれば、辺の追加に対して `O(n^2)` で距離行列を更新できます。
-ただし、緩和が起きない場合（最短距離が短くならない場合）は処理をスキップします。
+一度 `solve()` されている、あるいは辺が存在しない初期状態（距離行列が整合している状態）であれば、辺の追加に対して `O(n^2)` で距離行列を更新できます。
+緩和が起きない場合（最短距離が短くならない場合）は処理をスキップします。
 
 ```python
 fw = FloydWarshall(n, inf=10**18)
@@ -57,6 +70,7 @@ fw.solve()
 
 # Add a shorter edge and update all-pairs distances
 fw.add_edge(u, v, w, update_dists=True)
+print(fw.dist[u][v])  # shortest distance u -> v
 ```
 
 ### 負閉路の検出
