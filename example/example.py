@@ -147,7 +147,7 @@ class FloydWarshall:
         If the matrix is already up-to-date, this method returns immediately.
 
         Returns:
-            The distance matrix.
+            The distance matrix (no copy). Make a copy before modifying.
         """
         assert self.inf > 0
 
@@ -179,7 +179,7 @@ class FloydWarshall:
         This requires that the distance matrix is up-to-date.
 
         Returns:
-            The distance matrix.
+            The distance matrix (no copy). Make a copy before modifying.
 
         Raises:
             RuntimeError: If the matrix is stale.
