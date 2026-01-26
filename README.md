@@ -16,7 +16,7 @@ All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxat
 - 負閉路検出
 - 辺の追加に伴う距離行列の更新を `O(n^2)` で実行可能
 
-### 注意点
+注意点:
 
 - 本実装は緩和（距離を短縮するような辺追加 / 重み減少）のみを反映します。重み増加や辺削除はサポートしません。
 
