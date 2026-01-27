@@ -26,12 +26,12 @@ All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxat
 
 | メソッド / プロパティ | 機能 | 計算量 | 使用条件 | 状態変化 |
 | - | - | - | - | - |
-| `__init__(...)` | 初期化 | `O(n^2)` | - | 距離行列を**整合化** |
-| `add_edge(...,`<br>`update_dists=False)` | 辺の追加 | `O(1)` | - | 距離行列を**非整合化** |
-| `add_edge(...,`<br>`update_dists=True)` | 辺の追加<br>距離行列更新 | `O(n^2)` | 距離行列が**整合** | (距離行列は**整合**維持) |
-| `solve()` | 距離行列更新<br>距離行列取得 | `O(n^3)` | - | 距離行列を**整合化** |
-| `dist` | 距離行列取得<br>(プロパティ) | `O(1)` | 距離行列が**整合** | - |
-| `has_negative_cycle()` | 負閉路検出 | `O(n)` | 距離行列が**整合** | - |
+| `__init__(...)` | 初期化 | `O(n^2)` | - | 距離行列を整合化 |
+| `add_edge(...,`<br>`update_dists=False)` | 辺の追加 | `O(1)` | - | 距離行列を非整合化 |
+| `add_edge(...,`<br>`update_dists=True)` | 辺の追加<br>距離行列更新 | `O(n^2)` | 距離行列が整合 | (距離行列は整合維持) |
+| `solve()` | 距離行列更新<br>距離行列取得 | `O(n^3)` | - | 距離行列を整合化 |
+| `dist` | 距離行列取得<br>(プロパティ) | `O(1)` | 距離行列が整合 | - |
+| `has_negative_cycle()` | 負閉路検出 | `O(n)` | 距離行列が整合 | - |
 
 - 空間計算量: `O(n^2)`（距離行列）
 
