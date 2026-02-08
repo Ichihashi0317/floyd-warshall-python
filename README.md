@@ -1,4 +1,4 @@
-# FloydWarshall (Python)
+# Floyd-Warshall (Python)
 
 All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxation API, designed for competitive programming.
 
