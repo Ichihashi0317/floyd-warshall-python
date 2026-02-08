@@ -3,7 +3,7 @@
 All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxation API, designed for competitive programming.
 
 競プロ用途のワーシャル・フロイド実装です。
-`add_edge()` で辺を設定した後、`solve()` で全点対最短距離を計算します。
+`add_edge()` で辺を設定し、`solve()` で全点対最短距離を計算します。
 `solve()` 後に辺の追加を行う場合、必要に応じて `solve()` より軽い計算量で距離行列を更新できます。
 
 ## 特徴
