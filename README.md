@@ -37,6 +37,8 @@ All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxat
 
 ### 距離行列の整合 / 非整合状態について
 
+<details><summary>定義 / 使用上の注意</summary>
+
 #### 定義
 
 - 整合: 現在のグラフに対する全点対最短距離が内部の距離行列に反映されている状態
@@ -50,6 +52,8 @@ All-pairs shortest paths (Floyd–Warshall) with an optional incremental relaxat
   - `add_edge(..., update_dists=True)` の呼び出し
   - `has_negative_cycle()` の呼び出し
 - `solve()` を呼ぶことで距離行列は整合します。
+
+</details>
 
 ## 使い方
 
