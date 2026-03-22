@@ -123,7 +123,7 @@ else:
   - 検証方法: AtCoder ABC375F
   - 問題: <https://atcoder.jp/contests/abc375/tasks/abc375_f>
   - 解説: <https://atcoder.jp/contests/abc375/editorial/11134>
-  - 提出コード: [example.py](example/example.py)
+  - 提出コード: [example.py](example/example.py) (`FloydWarshall`定義部に [floyd_warshall.py](floyd_warshall.py) を貼り付けてから提出して下さい)
 
 - 他機能の検証（例外条件、負閉路検出）
 
